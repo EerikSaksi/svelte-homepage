@@ -1,16 +1,33 @@
 <script>
-  let index = 0;
+  let index = 4;
   import OneCard from "./one_card.svelte";
+  let cardExtraClasses = [
+    "bg-green-400", 
+    "bg-yellow-400 -top-4 -left-4",
+    "bg-red-400 -top-8 -left-8",
+    "bg-black -top-12 -left-12",
+    "bg-purple-400 -top-16 -left-16",
+  ]
+
+  const nextCard = () => {
+    cardExtraClasses[index] += " opacity-0" 
+    index--;
+    console.log(index)
+  }
+
+  let clear
+  $: {
+    clearInterval(clear)
+    clear = setInterval(nextCard, 1000)
+  }
 </script>
 
 <div class="flex items-center justify-center h-56 ">
   <div class="relative flex">
     <div class="relative flex">
-      <OneCard extraClasses = "bg-green-400"/>
-      <OneCard extraClasses = "bg-yellow-400 -top-4 -left-4"/>
-      <OneCard extraClasses = "bg-red-400 -top-8 -left-8"/>
-      <OneCard extraClasses = "bg-black -top-12 -left-12"/>
-      <OneCard extraClasses = "bg-purple-400 -top-16 -left-16"/>
+      {#each cardExtraClasses as extraClasses}
+        <OneCard {extraClasses} />
+      {/each}
       <div
         class="absolute flex items-center justify-center h-40 bg-white border-2 border-black rounded-lg w-72 transform transition-all skew-x-12 -skew-y-12 -top-20 -left-20">
         <svg viewBox="0 0 247 31" class="w-auto h-7 sm:h-8"><path
