@@ -1,18 +1,23 @@
 <script>
   import Tailwind from "./Tailwind.svelte";
   import TimeEvent from "./time_event.svelte";
-  import Background from "./background.svelte";
+  import LeftHandIcons from "./icons/left_hand.svelte";
+  import RightHandIcons from "./icons/right_hand.svelte";
+  import Cards from "./cards/all.svelte";
 </script>
 
-
 <Tailwind />
-<div class="flex flex-col justify-center h-screen md:container md:mx-auto ">
-  <Background src = {"/media/coffee.webp"}/>
-  <img
-    class="h-72"
-    alt="Cartoon Eerik"
-    src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairFrizzle&accessoriesType=Round&hairColor=BlondeGolden&facialHairType=Blank&clotheType=Hoodie&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light" />
-  <div class="flex-1">
+<div class="flex flex-col h-screen md:container md:mx-auto">
+  <div class="flex flex-row justify-center">
+    <LeftHandIcons />
+    <img
+      class="h-72"
+      alt="Cartoon Eerik"
+      src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairFrizzle&accessoriesType=Round&hairColor=BlondeGolden&facialHairType=Blank&clotheType=Hoodie&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light" />
+    <RightHandIcons />
+  </div>
+
+  <div class="justify-center flex-1">
     <TimeEvent
       role="MSci in Computing"
       src="media/uni.png"
@@ -23,5 +28,8 @@
       src="https://upload.wikimedia.org/wikipedia/commons/4/41/Uros-logo-plain.png"
       alt="UROS"
       timeRange="June 2019 - August 2019" />
+  </div>
+  <div class="justify-end flex-1">
+    <Cards />
   </div>
 </div>

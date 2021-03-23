@@ -1,6 +1,4 @@
 <script>
-
-	import { slide } from 'svelte/transition';
   export let role;
   export let src;
   export let alt;
@@ -9,7 +7,7 @@
 </script>
 
 <div
-  class="max-w-md p-2 mx-auto mt-6 overflow-hidden bg-white shadow-md rounded-xl md:max-w-2xl" transition:slide >
+  class="max-w-md p-2 mx-auto mb-6 overflow-hidden bg-white shadow-md rounded-xl md:max-w-3xl">
   <p class="text-2xl text-center sm:text-3xl">{timeRange}</p>
   <div class="items-center justify-center md:flex">
     <div class="justify-center md:flex-shrink-0">
