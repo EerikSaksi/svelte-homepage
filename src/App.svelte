@@ -17,7 +17,7 @@
     <RightHandIcons />
   </div>
 
-  <div class="justify-center flex-1">
+  <div class="flex-row justify-center flex-1">
     <TimeEvent
       role="MSci in Computing"
       src="media/uni.png"
