@@ -1,7 +1,7 @@
 <script>
   import OneCard from "./one_card.svelte";
 
-  let index = 3;
+  let index = 4;
   let cardData = [
     {
       extraClasses: "bg-green-400 grid-rows-1 grid-cols-2",
@@ -12,16 +12,32 @@
         },
         {
           src:
-            "https://toppng.com/uploads/preview/react-native-svg-transformer-allows-you-import-svg-aperture-science-innovators-logo-11562851994zqcpwozsvy.png",
+            "https://pagepro.co/blog/wp-content/uploads/2020/03/react-native-logo-884x1024.png",
         },
       ],
+    },
+    { extraClasses: "bg-yellow-400 -top-4 -left-4 grid-cols-2 grid-rows-2" ,
+      images: [
+        {
+          src:
+            "http://innerlife.io/wp-content/uploads/2019/04/postgresql-logo.png",
+        },
+        {
+          src: "https://img.stackshare.io/service/7419/20165699.png"
+        },
+        {
+          src: "https://cdn.iconscout.com/icon/free/png-256/sequelize-3-1175091.png"
+
+        },
+        {src: "https://www.vitoshacademy.com/wp-content/uploads/2015/05/sqlalchemy-logo1.png"}
+      ]
     },
     {
       extraClasses: "bg-red-400 -top-8 -left-8 grid-rows-2 grid-cols-2",
       images: [
         {
           src:
-            "https://blog.knoldus.com/wp-content/uploads/2019/06/graphql.png",
+            "https://montykamath.files.wordpress.com/2018/02/graphql.png?w=210&h=210",
         },
 
         {
@@ -66,7 +82,6 @@
         {src: "https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png"}
       ],
     },
-    //{ extraClasses: "bg-yellow-400 -top-4 -left-4"  },
   ];
   const nextCard = () => {
     console.log("ran");
@@ -74,18 +89,21 @@
     index--;
   };
 
-  let clear;
-  $: {
-    clearInterval(clear);
-    clear = setInterval(nextCard, 2000);
-  }
+  //let clear;
+  //$: {
+  //  clearInterval(clear);
+  //  clear = setInterval(nextCard, 2000);
+  //}
 </script>
 
 <div class="flex items-center justify-center h-56 ">
   <div class="relative flex">
     <div class="relative flex">
       {#each cardData as cd, i}
-        <OneCard extraClasses={cd.extraClasses} images={cd.images} />
+        <OneCard
+          extraClasses={cd.extraClasses}
+          images={cd.images}
+          showImgs={index - 1 <= i} />
       {/each}
     </div>
   </div>
