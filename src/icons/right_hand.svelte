@@ -2,7 +2,7 @@
   <img
     alt="Github"
     class="h-10"
-    src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" />
+    src="media/git.webp" />
   <svg
     class = "h-10"
     xmlns="http://www.w3.org/2000/svg"

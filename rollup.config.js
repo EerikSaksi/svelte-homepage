@@ -49,7 +49,10 @@ export default {
         // https://github.com/kaisermann/svelte-preprocess/#user-content-options
         sourceMap: !production,
 
-        ...image(),
+        ...image({
+          processFolders: ['media']
+        }),
+
         postcss: {
           plugins: [require("tailwindcss"), require("autoprefixer"), require("postcss-nesting")],
         },

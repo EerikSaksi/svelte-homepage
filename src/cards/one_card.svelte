@@ -3,6 +3,7 @@
   export let images;
   export let showImgs;
 </script>
+
 <div
   class="grid absolute h-40 rounded-lg w-72 transform transition-all skew-x-12 -skew-y-12 -translate-x-1/2 {extraClasses}">
   {#if showImgs}

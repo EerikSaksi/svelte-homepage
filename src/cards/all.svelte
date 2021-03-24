@@ -50,7 +50,7 @@
         },
 
         {
-          src: "media/postgraphile.png",
+          src: "media/postgraphile.webp",
           extraClasses: "col-span-full",
         },
       ],
@@ -58,13 +58,12 @@
     {
       extraClasses: "bg-black -top-12 md:-left-12 grid-cols-2 grid-rows-2",
       images: [
-        { src: "https://material-ui.com/static/logo.png" },
+        { src: "media/materialui.webp" },
         {
-          src:
-            "https://camo.githubusercontent.com/a664defdd5c2ec93a3fbfb51e0f2aaafa5dc57bf1e13aa47456ced037b3cebe8/68747470733a2f2f676574626f6f7473747261702e636f6d2f646f63732f352e302f6173736574732f6272616e642f626f6f7473747261702d6c6f676f2d736861646f772e706e67",
+          src: "media/bootstrap.webp",
         },
         {
-          src: "https://miro.medium.com/max/800/1*mUISLg4ghf6QYT_f1-cnlg.png",
+          src: "media/tailwind.webp",
           extraClasses: "col-span-full",
         },
       ],
@@ -74,46 +73,43 @@
       extraClasses: "bg-purple-400 -top-16 md:-left-16 grid-cols-2 grid-rows-2",
       images: [
         {
-          src: "https://image.flaticon.com/icons/png/512/1183/1183672.png",
+          src: "media/react.webp",
         },
         {
-          src:
-            "https://openexpoeurope.com/wp-content/uploads/2019/09/svelte-logo.png",
+          src: "media/svelte.webp",
         },
         {
-          src:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Django_logo.svg/1200px-Django_logo.svg.png",
+          src: "media/django.webp",
         },
         {
-          src:
-            "https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png",
+          src: "media/jquery.webp",
         },
       ],
     },
   ];
 
- let clear;
+  let clear;
   const nextCard = () => {
     console.log("ran");
     cardData[index].extraClasses += " opacity-0";
     index--;
-    if (index === -1){
+    if (index === -1) {
       clearInterval(clear);
     }
   };
 
-   $: {
-     clear = setInterval(nextCard, 2000);
-   }
+  $: {
+    clear = setInterval(nextCard, 3000);
+  }
 </script>
 
 <div class="flex items-center justify-center h-48">
   <div class="relative flex">
     {#each cardData as cd, i}
-        <OneCard
-          extraClasses={cd.extraClasses}
-          images={cd.images}
-          showImgs={index - 1 <= i}/>
+      <OneCard
+        extraClasses={cd.extraClasses}
+        images={cd.images}
+        showImgs={index - 1 <= i} />
     {/each}
   </div>
 </div>
