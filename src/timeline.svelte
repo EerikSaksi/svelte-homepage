@@ -1,23 +1,26 @@
-<script>
-  import { spring } from "svelte/motion";
+<style>
+  @keyframes slideInFromLeft {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  .ball {
+    animation: slideInFromLeft 1s forwards;
+  }
+</style>
 
-  let width = spring(0, {
-    stiffness: 0.1,
-    damping: 0.25,
-  });
-
-</script>
-
-<div class="flex flex-row items-center">
-  <div class="relative flex items-center justify-center animate-pulse">
-    <div
-      class="absolute flex items-center w-4 h-4 rounded-full bg-gradient-to-r from -green-500 to-pink-100" />
-  </div>
-  <div
-    style="width: {width}%"
-    class="h-2 rounded transition bg-gradient-to-r from-pink-100 via-green-500 to-pink-100" />
+<div class="flex flex-row ">
   <div class="relative flex items-center justify-center">
     <div
-      class="flex items-center w-4 h-4 rounded-full bg-gradient-to-r from-pink-100 to-green-500 animate-pulse" />
+      class="absolute flex items-center w-6 h-6 rounded-full bg-gradient-to-r from-green-500 to-pink-100" />
+  </div>
+  <div
+    class="h-3 rounded ball ease-in-out transition-all bg-gradient-to-r from-pink-100 via-green-500 to-pink-100 animate-pulse" />
+  <div class="relative flex items-center justify-center">
+    <div
+      class="absolute flex items-center w-6 h-6 rounded-full bg-gradient-to-r from-pink-100 to-green-500 " />
   </div>
 </div>
