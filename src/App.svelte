@@ -29,7 +29,7 @@
       alt="UROS"
       timeRange="June 2019 - August 2019" />
   </div>
-  <div class="justify-end flex-1">
+  <div class="flex-1">
     <Cards />
   </div>
 </div>

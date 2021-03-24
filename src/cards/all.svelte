@@ -4,7 +4,7 @@
   let index = 4;
   let cardData = [
     {
-      extraClasses: "bg-green-400 grid-rows-1 grid-cols-2",
+      extraClasses: "bg-indigo-400 grid-rows-1 grid-cols-2",
       images: [
         {
           src:
@@ -16,24 +16,28 @@
         },
       ],
     },
-    { extraClasses: "bg-yellow-400 -top-4 -left-4 grid-cols-2 grid-rows-2" ,
+    {
+      extraClasses: "bg-yellow-400 -top-4 md:-left-4 grid-cols-2 grid-rows-2",
       images: [
         {
           src:
             "http://innerlife.io/wp-content/uploads/2019/04/postgresql-logo.png",
         },
         {
-          src: "https://img.stackshare.io/service/7419/20165699.png"
+          src: "https://img.stackshare.io/service/7419/20165699.png",
         },
         {
-          src: "https://cdn.iconscout.com/icon/free/png-256/sequelize-3-1175091.png"
-
+          src:
+            "https://cdn.iconscout.com/icon/free/png-256/sequelize-3-1175091.png",
         },
-        {src: "https://www.vitoshacademy.com/wp-content/uploads/2015/05/sqlalchemy-logo1.png"}
-      ]
+        {
+          src:
+            "https://www.vitoshacademy.com/wp-content/uploads/2015/05/sqlalchemy-logo1.png",
+        },
+      ],
     },
     {
-      extraClasses: "bg-red-400 -top-8 -left-8 grid-rows-2 grid-cols-2",
+      extraClasses: "bg-red-400 -top-8 md:-left-8 grid-rows-2 grid-cols-2",
       images: [
         {
           src:
@@ -52,7 +56,7 @@
       ],
     },
     {
-      extraClasses: "bg-black -top-12 -left-12 grid-cols-2 grid-rows-2",
+      extraClasses: "bg-black -top-12 md:-left-12 grid-cols-2 grid-rows-2",
       images: [
         { src: "https://material-ui.com/static/logo.png" },
         {
@@ -67,7 +71,7 @@
     },
 
     {
-      extraClasses: "bg-purple-400 -top-16 -left-16 grid-cols-2 grid-rows-2",
+      extraClasses: "bg-purple-401 -top-16 md:-left-16 grid-cols-2 grid-rows-2",
       images: [
         {
           src: "https://image.flaticon.com/icons/png/512/1183/1183672.png",
@@ -77,34 +81,39 @@
             "https://openexpoeurope.com/wp-content/uploads/2019/09/svelte-logo.png",
         },
         {
-          src:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Django_logo.svg/1200px-Django_logo.svg.png"
+          src:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Django_logo.svg/1200px-Django_logo.svg.png",
         },
-        {src: "https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png"}
+        {
+          src:
+            "https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png",
+        },
       ],
     },
   ];
+
+ let clear;
   const nextCard = () => {
     console.log("ran");
     cardData[index].extraClasses += " opacity-0";
     index--;
+    if (index === -1){
+      clearInterval(clear);
+    }
   };
 
-  //let clear;
-  //$: {
-  //  clearInterval(clear);
-  //  clear = setInterval(nextCard, 2000);
-  //}
+   $: {
+     clear = setInterval(nextCard, 2000);
+   }
 </script>
 
-<div class="flex items-center justify-center h-56 ">
+<div class="flex items-center justify-center h-48">
   <div class="relative flex">
-    <div class="relative flex">
-      {#each cardData as cd, i}
+    {#each cardData as cd, i}
         <OneCard
           extraClasses={cd.extraClasses}
           images={cd.images}
-          showImgs={index - 1 <= i} />
-      {/each}
-    </div>
+          showImgs={index - 1 <= i}/>
+    {/each}
   </div>
 </div>
