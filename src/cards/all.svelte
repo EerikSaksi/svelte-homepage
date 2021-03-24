@@ -71,7 +71,7 @@
     },
 
     {
-      extraClasses: "bg-purple-401 -top-16 md:-left-16 grid-cols-2 grid-rows-2",
+      extraClasses: "bg-purple-400 -top-16 md:-left-16 grid-cols-2 grid-rows-2",
       images: [
         {
           src: "https://image.flaticon.com/icons/png/512/1183/1183672.png",
