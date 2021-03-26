@@ -5,7 +5,6 @@ import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import css from "rollup-plugin-css-only";
 import sveltePreprocess from "svelte-preprocess";
-import image from "svelte-image";
 import copy from 'rollup-plugin-copy'
 
 const production = !process.env.ROLLUP_WATCH;
@@ -49,10 +48,6 @@ export default {
         // https://github.com/kaisermann/svelte-preprocess/#user-content-options
         sourceMap: !production,
 
-        ...image({
-          processFolders: ['media']
-        }),
-
         postcss: {
           plugins: [require("tailwindcss"), require("autoprefixer"), require("postcss-nesting")],
         },
@@ -89,6 +84,6 @@ export default {
     production && terser(),
   ],
   watch: {
-    clearScreen: false,
+    chokidar: false
   },
 };
