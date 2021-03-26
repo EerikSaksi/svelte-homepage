@@ -1,6 +1,6 @@
-<div class = "flex flex-col justify-evenly">
+<div class="absolute flex flex-col justify-evenly -left-4">
   <svg
-    class="h-8"
+   class="h-8"
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"

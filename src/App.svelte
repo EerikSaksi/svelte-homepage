@@ -1,10 +1,8 @@
 <script>
   import Tailwind from "./Tailwind.svelte";
-  import TimeEvent from "./time_event.svelte";
   import LeftHandIcons from "./icons/left_hand.svelte";
   import RightHandIcons from "./icons/right_hand.svelte";
-  import Cards from "./cards/all.svelte";
-  import Timeline from "./timeline.svelte";
+  import Timeline from "./timeline/bar.svelte";
 </script>
 
 <Tailwind />
