@@ -19,7 +19,7 @@
 </style>
 
 
-<div class="flex flex-row w-full">
+<div class="flex flex-row w-2/3 md:w-full">
   <Ball />
   <div
     class="h-3 rounded bar ease-in-out transition-all bg-gradient-to-r from-green-200 via-green-500 to-green-200" />

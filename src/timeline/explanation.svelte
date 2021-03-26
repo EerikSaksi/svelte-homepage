@@ -17,9 +17,12 @@
 </style>
 
 <div class="flex flex-col items-center">
-  <div class="flex flex-col w-1/4 m-4 pic transition-all place-content-center">
-    <img class="xs:w-full" alt="University of Glasgow" src="media/uni.webp" />
-    <p class="h-16 text-4xl text-center">MSci in Computing</p>
+  <div class="flex flex-col items-center m-4 pic transition-all">
+    <img
+      class="mb-4 xs:w-full"
+      alt="University of Glasgow"
+      src="media/uni.webp" />
+    <p class="text-2xl text-center md:text-4xl">MSci in Computing</p>
   </div>
   <Bar />
 </div>

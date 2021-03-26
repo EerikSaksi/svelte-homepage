@@ -1,8 +1,20 @@
 <script>
+  import { onMount } from "svelte";
   import Tailwind from "./Tailwind.svelte";
   import LeftHandIcons from "./icons/left_hand.svelte";
   import RightHandIcons from "./icons/right_hand.svelte";
   import Timeline from "./timeline/explanation.svelte";
+
+  let timer = 0;
+  onMount(() => {
+    const interval = setInterval(() => {
+      timer += 1;
+      console.log(timer);
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  });
 </script>
 
 <Tailwind />
@@ -18,6 +30,8 @@
     <RightHandIcons />
   </div>
   <div class="flex-1">
-    <Timeline />
+    {#if timer >= 0}
+      <Timeline />
+    {/if}
   </div>
 </div>
