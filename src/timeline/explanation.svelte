@@ -1,5 +1,5 @@
 <script>
-  import Bar from "./bar.svelte";
+  export let hidden = true;
 </script>
 
 <style>
@@ -16,7 +16,7 @@
   }
 </style>
 
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center {hidden ? 'hidden' : ''}">
   <div class="flex flex-col items-center m-4 pic transition-all">
     <img
       class="mb-4 xs:w-full"
@@ -24,5 +24,4 @@
       src="media/uni.webp" />
     <p class="text-2xl text-center md:text-4xl">MSci in Computing</p>
   </div>
-  <Bar />
 </div>

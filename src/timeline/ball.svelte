@@ -8,7 +8,7 @@
       {#if isRight}
         <div
           class="w-6 h-6 rounded-full bg-gradient-to-r from-green-200 to-green-500" />
-        <p class="ml-1">2018</p>
+        <p class="ml-1">2022</p>
       {:else}
         <p class="mr-1">2018</p>
         <div
