@@ -3,13 +3,27 @@
   import Tailwind from "./Tailwind.svelte";
   import LeftHandIcons from "./icons/left_hand.svelte";
   import RightHandIcons from "./icons/right_hand.svelte";
-  import Timeline from "./timeline/timeline.svelte";
+
+  let UniTimeline;
+  let UrosTimeline;
 
   let timer = 0;
   onMount(() => {
     const interval = setInterval(() => {
       timer += 1;
-    }, 500);
+      switch (timer) {
+        case 1:
+          import("./timeline/timeline.svelte").then((module) => {
+            UniTimeline = module.default;
+          });
+          break
+
+        case 2:
+          import("./timeline/uros_timeline.svelte").then((module) => {
+            UrosTimeline = module.default;
+          });
+      }
+    }, 2000);
     return () => {
       clearInterval(interval);
     };
@@ -28,10 +42,8 @@
     </div>
     <RightHandIcons />
   </div>
-  <Timeline src="media/uni.webp" />
-  <Timeline
-    explanationText="Software Engineer Intern"
-    explanationOnTop={false}
-    src="media/uros.webp"
-    colors={['from-red-200', 'via-red-500', 'to-red-200', 'from-red-500', 'to-red-500', 'ring-red-500', 'text-red-500']} />
+  <div class="flex-1">
+    <svelte:component this={UniTimeline} />
+    <svelte:component this={UrosTimeline} />
+  </div>
 </div>

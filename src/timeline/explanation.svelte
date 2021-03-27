@@ -1,9 +1,9 @@
 <script>
   export let invisible = true;
-  export let src;
+  export let src = "media/uni.webp";
   export let colors;
   export let explanationOnTop = true;
-  export let explanationText
+  export let explanationText;
 </script>
 
 <style>
