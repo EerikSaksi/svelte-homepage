@@ -6,22 +6,9 @@
   export let leftShift;
 </script>
 
-<style>
-  @keyframes slideInFromLeft {
-    0% {
-      opacity: 0%;
-    }
-    100% {
-      opacity: 100%;
-    }
-  }
-  .pic {
-    animation: slideInFromLeft 2s forwards;
-  }
-</style>
 
 <div
-  class="w-36 md:w-96 {invisible ? 'opacity-0' : 'opacity-100'} transition-all pic relative  {leftShift ? leftShift : 'left-1/2'} transform -translate-x-1/2 m-3 ">
+  class="w-36 md:w-96 {invisible ? 'opacity-0' : 'opacity-100'} pic relative  {leftShift ? leftShift : 'left-1/2'} transform -translate-x-1/2 m-3 fade-in">
   <div
     class="flex flex-col items-center p-2 rounded-lg ring {colors[5]} ">
     <img

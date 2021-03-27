@@ -32,11 +32,11 @@
   }
 </style>
 
-<div class="flex flex-col">
+<div class="flex flex-col justify-start align-start">
   {#if explanationOnTop}
     <Explanation {src} {colors} {explanationText} {leftShift} />
   {/if}
-  <div class="relative m-3 flex justify-center">
+  <div class="relative flex justify-center m-3">
     <div
       class="flex flex-row {widths} absolute {leftShift ? leftShift + ' transform -translate-x-1/2 ' : ''}">
       <Ball {colors} date={dates[0]} />

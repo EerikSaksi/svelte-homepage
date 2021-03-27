@@ -103,7 +103,7 @@
   }
 </script>
 
-<div class="flex items-center justify-center h-48">
+<div class="flex items-center justify-center h-48 fade-in ease-in-out">
   <div class="relative flex">
     {#each cardData as cd, i}
       <OneCard

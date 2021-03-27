@@ -6,6 +6,7 @@
 
   let UniTimeline;
   let UrosTimeline;
+  let AllCards;
 
   let timer = 0;
   onMount(() => {
@@ -18,10 +19,16 @@
           });
           break;
 
-        case 2:
+        case 3:
           import("./timeline/uros_timeline.svelte").then((module) => {
             UrosTimeline = module.default;
           });
+          break;
+        case 5:
+          import("./cards/all.svelte").then((module) => {
+            AllCards = module.default;
+          });
+          break;
       }
     }, 1000);
     return () => {
@@ -39,9 +46,11 @@
     </div>
     <RightHandIcons />
   </div>
-  <div class="flex-1">
+  <div class="flex-1 h-20">
     <svelte:component this={UniTimeline} />
     <svelte:component this={UrosTimeline} />
   </div>
-  <div class="flex-1" />
+  <div class="flex-1">
+    <svelte:component this={AllCards} />
+  </div>
 </div>
