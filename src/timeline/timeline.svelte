@@ -38,10 +38,9 @@
   <div class="flex flex-row {widths}">
     <Ball {colors} date={dates[0]} />
     <div
-      class="h-3  rounded bar ease-in-out transition-all bg-gradient-to-r {colors[0] + ' ' + colors[1] + ' ' + colors[2]}" />
+      class="h-3  rounded bar ease-in-out transition-all bg-gradient-to-r {colors[0]} {colors[1]} {colors[2]}" />
     <Ball isRight={true} {colors} date={dates[1]} />
   </div>
-
   {#if !explanationOnTop}
     <Explanation {src} {colors} explanationOnTop={false} {explanationText} />
   {/if}
