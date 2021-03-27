@@ -1,6 +1,13 @@
 <script>
   import Ball from "./ball.svelte";
   let a = Array(10);
+  export let colors = [
+    "from-green-200",
+    "via-green-500",
+    "to-green-200",
+    "from-green-500",
+    "to-green-500",
+  ];
 </script>
 
 <style>
@@ -18,9 +25,8 @@
 </style>
 
 <div class="flex flex-row w-2/3 md:w-full ">
-  <Ball />
+  <Ball {colors}/>
   <div
-    class="h-3 rounded bar ease-in-out transition-all bg-gradient-to-r from-green-200 via-green-500 to-green-200" />
-  <Ball isRight={true} />
+    class="h-3 rounded bar ease-in-out transition-all bg-gradient-to-r {colors[0] + ' ' + colors[1] + ' ' + colors[2]}" />
+  <Ball isRight={true} {colors} />
 </div>
-

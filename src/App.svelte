@@ -30,11 +30,15 @@
     <RightHandIcons />
   </div>
   <div class="flex-1">
+    <Explanation src={'media/uni.webp'} invisible={timer <= 2} />
     {#if timer >= 2}
-      <Explanation hidden = {timer <= 2}/>
-    {/if}
-    {#if timer >= 3}
       <Bar />
+    {/if}
+    {#if timer >= 8}
+      <div class="mt-4">
+        <Bar
+          colors={['from-red-200', 'via-red-500', 'to-red-200', 'from-red-500', 'to-red-500']} />
+      </div>
     {/if}
   </div>
 </div>
