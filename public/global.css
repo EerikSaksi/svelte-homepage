@@ -1,0 +1,11 @@
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+.fade-in {
+  animation: slideInFromLeft 2s forwards;
+}
