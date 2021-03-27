@@ -15,6 +15,7 @@
   export let explanationText = "MSci in Computing";
   export let widths = "w-2/3 md:w-full";
   export let dates = ["2018", "2022"];
+  export let leftShift;
 </script>
 
 <style>
@@ -31,17 +32,24 @@
   }
 </style>
 
-<div class="flex flex-col items-center justify-center flex-1 m-4">
+<div class="flex flex-col">
   {#if explanationOnTop}
-    <Explanation {src} {colors} {explanationText} />
+    <Explanation {src} {colors} {explanationText} {leftShift} />
   {/if}
-  <div class="flex flex-row {widths}">
-    <Ball {colors} date={dates[0]} />
-    <div
-      class="h-3  rounded bar ease-in-out transition-all bg-gradient-to-r {colors[0]} {colors[1]} {colors[2]}" />
-    <Ball isRight={true} {colors} date={dates[1]} />
+  <div class="relative">
+    <div class="flex flex-row {widths} absolute {leftShift}">
+      <Ball {colors} date={dates[0]} />
+      <div
+        class="h-3  rounded bar ease-in-out transition-all bg-gradient-to-r {colors[0]} {colors[1]} {colors[2]}" />
+      <Ball isRight={true} {colors} date={dates[1]} />
+    </div>
   </div>
   {#if !explanationOnTop}
-    <Explanation {src} {colors} explanationOnTop={false} {explanationText} />
+    <Explanation
+      {src}
+      {colors}
+      explanationOnTop={false}
+      {explanationText}
+      {leftShift} />
   {/if}
 </div>

@@ -4,6 +4,7 @@
   export let colors;
   export let explanationOnTop = true;
   export let explanationText;
+  export let leftShift;
 </script>
 
 <style>
@@ -21,19 +22,23 @@
 </style>
 
 <div
-  class="flex ease-in-out flex-col items-center {invisible ? 'opacity-0' : 'opacity-100'} transition-all pic">
+  class="w-96 {invisible ? 'opacity-0' : 'opacity-100'} transition-all pic relative  {leftShift ? leftShift : 'left-1/2'} transform -translate-x-1/2">
   {#if !explanationOnTop}
-    <div
-      class="text-3xl {colors[6]} stroke-current c-triangle-left rotate-180 transform" />
+    <div class="flex flex-col items-center ">
+      <div
+        class="text-3xl {colors[6]} stroke-current c-triangle-left rotate-180 transform" />
+    </div>
   {/if}
   <div class="flex flex-col items-center p-2 rounded-lg ring {colors[5]}">
     <img
-      class="h-24 mb-4 object-fit xs:w-full"
+      class="h-24 mb-2 object-fit xs:w-full"
       alt="University of Glasgow"
       {src} />
-    <p class="text-2xl text-center md:text-4xl">{explanationText}</p>
+    <p class="text-xl text-center md:text-2xl">{explanationText}</p>
   </div>
   {#if explanationOnTop}
-    <div class="text-3xl {colors[6]} stroke-current c-triangle-left" />
+    <div class="flex flex-col items-center ">
+      <div class="text-3xl  {colors[6]} stroke-current c-triangle-left" />
+    </div>
   {/if}
 </div>
