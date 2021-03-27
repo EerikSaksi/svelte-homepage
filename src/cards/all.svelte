@@ -8,11 +8,11 @@
       images: [
         {
           src:
-            "https://res.cloudinary.com/practicaldev/image/fetch/s--5N472VlU--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://repository-images.githubusercontent.com/65750241/79017180-d4ce-11e9-9955-3f0a7be00c7a",
+            "",
         },
         {
           src:
-            "https://pagepro.co/blog/wp-content/uploads/2020/03/react-native-logo-884x1024.png",
+            "",
         },
       ],
     },
@@ -24,15 +24,15 @@
             "http://innerlife.io/wp-content/uploads/2019/04/postgresql-logo.png",
         },
         {
-          src: "https://img.stackshare.io/service/7419/20165699.png",
+          src: "",
         },
         {
           src:
-            "https://cdn.iconscout.com/icon/free/png-256/sequelize-3-1175091.png",
+            "",
         },
         {
           src:
-            "https://www.vitoshacademy.com/wp-content/uploads/2015/05/sqlalchemy-logo1.png",
+            "",
         },
       ],
     },
@@ -41,12 +41,12 @@
       images: [
         {
           src:
-            "https://montykamath.files.wordpress.com/2018/02/graphql.png?w=210&h=210",
+            "",
         },
 
         {
           src:
-            "https://user-images.githubusercontent.com/841294/53402609-b97a2180-39ba-11e9-8100-812bab86357c.png",
+            "",
         },
 
         {
@@ -113,3 +113,11 @@
     {/each}
   </div>
 </div>
+curl https://res.cloudinary.com/practicaldev/image/fetch/s--5N472VlU--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/ > res.cloudinary.com
+curl https://repository-images.githubusercontent.com/65750241/79017180-d4ce-11e9-9955-3f0a7be00c7a   > repository-images.githubusercontent.com
+curl https://pagepro.co/blog/wp-content/uploads/2020/03/react-native-logo-884x1024.png   > pagepro.co
+curl https://img.stackshare.io/service/7419/20165699.png   > img.stackshare.io
+curl https://cdn.iconscout.com/icon/free/png-256/sequelize-3-1175091.png   > cdn.iconscout.com
+curl https://www.vitoshacademy.com/wp-content/uploads/2015/05/sqlalchemy-logo1.png   > www.vitoshacademy.com
+curl https://montykamath.files.wordpress.com/2018/02/graphql.png?w=210&h=210   > montykamath.files.wordpress.com
+curl https://user-images.githubusercontent.com/841294/53402609-b97a2180-39ba-11e9-8100-812bab86357c.png   > user-images.githubusercontent.com
