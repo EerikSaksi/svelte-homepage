@@ -3,10 +3,10 @@
   import Tailwind from "./Tailwind.svelte";
   import LeftHandIcons from "./icons/left_hand.svelte";
   import RightHandIcons from "./icons/right_hand.svelte";
+  import Carousel from './cards/carousel.svelte'
 
   let UniTimeline;
   let UrosTimeline;
-  let AllCards;
 
   let timer = 0;
   onMount(() => {
@@ -50,7 +50,7 @@
     <svelte:component this={UniTimeline} />
     <svelte:component this={UrosTimeline} />
   </div>
-  <div class="flex-1">
-    <svelte:component this={AllCards} />
+  <div class="flex-1 ">
+    <Carousel/>
   </div>
 </div>

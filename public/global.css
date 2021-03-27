@@ -7,5 +7,5 @@
   }
 }
 .fade-in {
-  animation: slideInFromLeft 2s forwards;
+  animation: slideInFromLeft 1s forwards;
 }
