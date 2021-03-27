@@ -36,8 +36,9 @@
   {#if explanationOnTop}
     <Explanation {src} {colors} {explanationText} {leftShift} />
   {/if}
-  <div class="relative">
-    <div class="flex flex-row {widths} absolute {leftShift}">
+  <div class="relative m-3">
+    <div
+      class="flex flex-row {widths} absolute {leftShift ? leftShift + ' transform -translate-x-1/2 ' : ''}">
       <Ball {colors} date={dates[0]} />
       <div
         class="h-3  rounded bar ease-in-out transition-all bg-gradient-to-r {colors[0]} {colors[1]} {colors[2]}" />
@@ -48,7 +49,6 @@
     <Explanation
       {src}
       {colors}
-      explanationOnTop={false}
       {explanationText}
       {leftShift} />
   {/if}

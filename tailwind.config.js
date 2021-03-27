@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     triangles: {
       // defaults to {}
-      left: {
+      down: {
         direction: "down", // one of 'left', 'right', 'up', 'down', 'left-up', 'left-down', 'right-up', and 'right-down'
         size: "1em", // defaults to defaultSize
         height: "0.5em", // defaults to half the size; has no effect on the diagonal directions (e.g. 'left-up')
