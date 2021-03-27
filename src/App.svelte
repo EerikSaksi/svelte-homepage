@@ -16,14 +16,14 @@
           import("./timeline/timeline.svelte").then((module) => {
             UniTimeline = module.default;
           });
-          break
+          break;
 
         case 2:
           import("./timeline/uros_timeline.svelte").then((module) => {
             UrosTimeline = module.default;
           });
       }
-    }, 2000);
+    }, 100);
     return () => {
       clearInterval(interval);
     };
@@ -32,13 +32,10 @@
 
 <Tailwind />
 <div class="flex flex-col h-screen md:container md:mx-auto">
-  <div class="flex justify-center flex-1">
+  <div class="flex justify-center flex-1 ">
     <LeftHandIcons />
     <div class="flex flex-col justify-evenly">
-      <img
-        class="h-72"
-        alt="Cartoon Eerik"
-        src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairFrizzle&accessoriesType=Round&hairColor=BlondeGolden&facialHairType=Blank&clotheType=Hoodie&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light" />
+      <img alt="Cartoon Eerik" src="media/avataaars.svg" />
     </div>
     <RightHandIcons />
   </div>
@@ -46,4 +43,5 @@
     <svelte:component this={UniTimeline} />
     <svelte:component this={UrosTimeline} />
   </div>
+  <div class="flex-1" />
 </div>
