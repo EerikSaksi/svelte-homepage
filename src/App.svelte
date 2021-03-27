@@ -3,13 +3,12 @@
   import Tailwind from "./Tailwind.svelte";
   import LeftHandIcons from "./icons/left_hand.svelte";
   import RightHandIcons from "./icons/right_hand.svelte";
-  import Explanation from "./timeline/explanation.svelte";
-  import Bar from "./timeline/bar.svelte";
+  import Timeline from "./timeline/timeline.svelte";
+
   let timer = 0;
   onMount(() => {
     const interval = setInterval(() => {
       timer += 1;
-      console.log(timer);
     }, 500);
     return () => {
       clearInterval(interval);
@@ -29,16 +28,10 @@
     </div>
     <RightHandIcons />
   </div>
-  <div class="flex-1">
-    <Explanation src={'media/uni.webp'} invisible={timer <= 2} />
-    {#if timer >= 2}
-      <Bar />
-    {/if}
-    {#if timer >= 8}
-      <div class="mt-4">
-        <Bar
-          colors={['from-red-200', 'via-red-500', 'to-red-200', 'from-red-500', 'to-red-500']} />
-      </div>
-    {/if}
-  </div>
+  <Timeline src="media/uni.webp" />
+  <Timeline
+    explanationText="Software Engineer Intern"
+    explanationOnTop={false}
+    src="media/uros.webp"
+    colors={['from-red-200', 'via-red-500', 'to-red-200', 'from-red-500', 'to-red-500', 'ring-red-500', 'text-red-500']} />
 </div>
