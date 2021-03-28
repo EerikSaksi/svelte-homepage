@@ -3,8 +3,7 @@
   import Tailwind from "./Tailwind.svelte";
   import LeftHandIcons from "./icons/left_hand.svelte";
   import RightHandIcons from "./icons/right_hand.svelte";
-  import Carousel from './cards/carousel.svelte'
-
+  let CarouselWithTechnologies;
   let UniTimeline;
   let UrosTimeline;
 
@@ -25,10 +24,13 @@
           });
           break;
         case 5:
-          import("./cards/all.svelte").then((module) => {
-            AllCards = module.default;
-          });
+          UrosTimeline = undefined;
+          UniTimeline = undefined;
           break;
+        case 6:
+          import("./cards/carousel_with_technologies.svelte").then((module) => {
+             CarouselWithTechnologies = module.default;
+          });
       }
     }, 1000);
     return () => {
@@ -49,8 +51,6 @@
   <div class="flex-1 h-20">
     <svelte:component this={UniTimeline} />
     <svelte:component this={UrosTimeline} />
-  </div>
-  <div class="flex-1 ">
-    <Carousel/>
+    <svelte:component this={CarouselWithTechnologies} />
   </div>
 </div>
