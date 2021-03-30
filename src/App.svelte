@@ -1,7 +1,6 @@
 <script>
   import { onMount } from "svelte";
   import IntersectionObserver from "svelte-intersection-observer";
-
   import Tailwind from "./Tailwind.svelte";
   import LeftHandIcons from "./icons/left_hand.svelte";
   import RightHandIcons from "./icons/right_hand.svelte";
