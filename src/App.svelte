@@ -7,7 +7,7 @@
   let CarouselWithTechnologies;
   let intersecting;
   let element;
-  if (true) {
+  $: if (intersecting) {
     console.log("ran");
     import("./carousel/carousel_with_technologies.svelte").then((module) => {
       CarouselWithTechnologies = module.default;
@@ -26,13 +26,10 @@
           import("./timeline/timeline.svelte").then((module) => {
             UniTimeline = module.default;
           });
-          Array.from(document.getElementsByTagName("img")).forEach(img => console.log(`${img.src} ${img.width} ${img.height}`))
-
           break;
         case 3:
           import("./timeline/uros_timeline.svelte").then((module) => {
             UrosTimeline = module.default;
-
             clearInterval(interval);
           });
           break;
