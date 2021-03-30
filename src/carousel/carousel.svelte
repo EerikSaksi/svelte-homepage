@@ -25,17 +25,16 @@
     console.log(distances);
   }
   onMount(() => {
-    const interval = setInterval(() => nextSlide(), 1000);
+    nextSlide()
+    const interval = setInterval(() => nextSlide(), 3000);
     return () => clearInterval(interval);
   });
 </script>
 
-<div class="relative w-full h-64 rounded-xl">
+<div class="relative h-72 rounded-xl w-screen">
   {#each technologies as technology, i}
-    {#if Math.abs(distances[i]) != 2}
-      <Slide dist={distances[i]}>
-        <TechnologyGrid />
-      </Slide>
-    {/if}
+    <Slide dist={distances[i]}>
+      <TechnologyGrid />
+    </Slide>
   {/each}
 </div>

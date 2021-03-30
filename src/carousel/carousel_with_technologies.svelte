@@ -76,6 +76,4 @@
   ];
 
 </script>
-<div class="flex items-center justify-center h-48 fade-in ease-in-out">
-  <Carousel {technologies}/>
-</div>
+<Carousel {technologies}/>
