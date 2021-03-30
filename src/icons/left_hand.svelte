@@ -15,7 +15,7 @@
   </a>
   <a href = "tel:+44 7519 698 702">
   <svg
-    h="h-8 md:h-14"
+    class="h-8 md:h-14"
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
