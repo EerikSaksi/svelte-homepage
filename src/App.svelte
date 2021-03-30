@@ -7,9 +7,9 @@
   import RightHandIcons from "./icons/right_hand.svelte";
   let CarouselWithTechnologies;
   let intersecting;
-  let element
+  let element;
   $: if (intersecting) {
-    console.log('ran')
+    console.log("ran");
     import("./carousel/carousel_with_technologies.svelte").then((module) => {
       CarouselWithTechnologies = module.default;
     });
@@ -47,7 +47,7 @@
   <div class="flex justify-center flex-1 ">
     <LeftHandIcons />
     <div class="flex flex-col justify-evenly">
-      <img alt="Cartoon Eerik" src="media/avataaars.svg" />
+      <img class="h-64 md:h-96" alt="Cartoon Eerik" src="media/avataaars.svg" />
     </div>
     <RightHandIcons />
   </div>
@@ -57,7 +57,7 @@
   </div>
 </div>
 
-<IntersectionObserver {element} threshold={0} bind:intersecting once = {true}>
+<IntersectionObserver {element} threshold={0.05} bind:intersecting once={true}>
   <div bind:this={element} class="flex items-center justify-center h-screen">
     <svelte:component this={CarouselWithTechnologies} />
   </div>
