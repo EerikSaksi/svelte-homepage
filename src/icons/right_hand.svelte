@@ -1,7 +1,7 @@
 <div class="flex flex-col justify-evenly">
   <a class = "text-center" href="https://github.com/EerikSaksi">
     Github
-    <img alt="Github" class="w-8 h-8 md:w-12 md:h-12" src="media/git.webp" />
+    <img alt="Github" class="w-8 md:w-12 ml-1" src="media/git.webp" />
   </a>
   <a
     href="https://drive.google.com/uc?export=download&id=1ZkthduWcQRQuJ70Ma_PTB11x7ePEzwM7"

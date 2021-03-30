@@ -43,13 +43,18 @@
 
 <Tailwind />
 <div class="flex flex-col h-screen md:container md:mx-auto">
-  <div class="flex justify-center flex-1 ">
-    <LeftHandIcons />
-    <div class="flex flex-col justify-evenly">
-      <img class="h-64 md:h-96" alt="Cartoon Eerik" src="media/avataaars.svg" />
+  <main>
+    <div class="flex justify-center flex-1 ">
+      <LeftHandIcons />
+      <div class="flex flex-col justify-evenly">
+        <img
+          class="h-64 md:h-96"
+          alt="Cartoon Eerik"
+          src="media/avataaars.svg" />
+      </div>
+      <RightHandIcons />
     </div>
-    <RightHandIcons />
-  </div>
+  </main>
   <div class="flex-1">
     <svelte:component this={UniTimeline} />
     <svelte:component this={UrosTimeline} />
