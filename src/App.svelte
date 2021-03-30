@@ -17,20 +17,11 @@
             UniTimeline = module.default;
           });
           break;
-
         case 3:
           import("./timeline/uros_timeline.svelte").then((module) => {
             UrosTimeline = module.default;
           });
           break;
-        case 5:
-          UrosTimeline = undefined;
-          UniTimeline = undefined;
-          break;
-        case 6:
-          import("./cards/carousel_with_technologies.svelte").then((module) => {
-             CarouselWithTechnologies = module.default;
-          });
       }
     }, 1000);
     return () => {
@@ -49,9 +40,8 @@
     </div>
     <RightHandIcons />
   </div>
-  <div class="flex-1 h-20">
+  <div class="flex-1">
     <svelte:component this={UniTimeline} />
     <svelte:component this={UrosTimeline} />
-    <svelte:component this={CarouselWithTechnologies} />
   </div>
 </div>
