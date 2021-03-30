@@ -57,7 +57,7 @@
   </div>
 </div>
 
-<IntersectionObserver {element} threshold={0.25} bind:intersecting once = {true}>
+<IntersectionObserver {element} threshold={0} bind:intersecting once = {true}>
   <div bind:this={element} class="flex items-center justify-center h-screen">
     <svelte:component this={CarouselWithTechnologies} />
   </div>
