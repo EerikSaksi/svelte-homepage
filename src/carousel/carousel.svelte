@@ -10,7 +10,7 @@
     return index % 5;
   };
 
-  let activeIndex = 0;
+  let activeIndex = -1;
   export let technologies;
   export let distances = Array(5);
 
@@ -31,10 +31,10 @@
   });
 </script>
 
-<div class="relative h-72 rounded-xl w-screen">
+<div class="relative w-screen overflow-hidden h-72 rounded-xl">
   {#each technologies as technology, i}
     <Slide dist={distances[i]}>
-      <TechnologyGrid />
+      <TechnologyGrid images = {technology.images} extraClasses = {technology.extraClasses} />
     </Slide>
   {/each}
 </div>

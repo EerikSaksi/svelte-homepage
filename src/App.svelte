@@ -33,7 +33,7 @@
 
 <Tailwind />
 
-<div class="flex flex-col h-screen md:container md:mx-auto">
+<div class="flex flex-col h-screen md:mx-auto">
   <div class="flex items-center justify-center flex-1 ">
     <CarouselWithTechnologies/>
   </div>
