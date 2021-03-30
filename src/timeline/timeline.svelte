@@ -32,7 +32,7 @@
   }
 </style>
 
-<div class="flex flex-col justify-start align-start fade-in">
+<div class="flex flex-col justify-start align-start fade-in delay-">
   {#if explanationOnTop}
     <Explanation {src} {colors} {explanationText} {leftShift} />
   {/if}
