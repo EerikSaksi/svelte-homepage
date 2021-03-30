@@ -24,7 +24,6 @@
     tempDistances[convertIndex(activeIndex + 1)] = 1;
     tempDistances[convertIndex(activeIndex + 2)] = 2;
     distances = tempDistances;
-    console.log(distances);
   }
   onMount(() => {
     nextSlide()
