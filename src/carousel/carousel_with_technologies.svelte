@@ -77,6 +77,24 @@
       ],
     },
 
+    {
+      extraClasses: "grid-cols-2 grid-rows-2",
+      images: [
+        {
+          src: "media/pandas.webp",
+        },
+        {
+          src: "media/scikit.webp",
+        },
+        {
+          src: "media/spotlight.webp",
+        },
+        {
+          src: "media/networkx.webp",
+        },
+      ],
+    },
+
   ];
 
 </script>

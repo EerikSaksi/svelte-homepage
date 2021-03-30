@@ -5,20 +5,22 @@
 
   const convertIndex = (index) => {
     if (index < 0) {
-      return 5 + index;
+      return 6 + index;
     }
-    return index % 5;
+    return index % 6;
   };
 
   let activeIndex = -1;
   export let technologies;
-  export let distances = Array(5);
+  export let distances = Array(6);
 
   async function nextSlide() {
-    activeIndex = (activeIndex + 1) % 5;
-    const tempDistances = Array(5).fill(0);
+    activeIndex = (activeIndex + 1) % 6;
+    const tempDistances = Array(6).fill(0);
+
     tempDistances[convertIndex(activeIndex - 1)] = -1;
     tempDistances[convertIndex(activeIndex - 2)] = -2;
+    tempDistances[convertIndex(activeIndex - 3)] = -3;
     tempDistances[convertIndex(activeIndex + 1)] = 1;
     tempDistances[convertIndex(activeIndex + 2)] = 2;
     distances = tempDistances;
