@@ -1,5 +1,6 @@
 <div class="flex flex-col justify-evenly">
-  <a href="mailto:saksi.eerik@gmail.com">
+  <a class="text-center" href="mailto:saksi.eerik@gmail.com">
+    Email
     <svg
       class="h-8 md:h-14"
       xmlns="http://www.w3.org/2000/svg"
@@ -13,7 +14,8 @@
         d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
     </svg>
   </a>
-  <a href = "tel:+44 7519 698 702">
+  <a class="text-center" href = "tel:+44 7519 698 702">
+  Mobile
   <svg
     class="h-8 md:h-14"
     xmlns="http://www.w3.org/2000/svg"
