@@ -23,7 +23,6 @@
     "svelte-intersection-observer": "^0.6.0",
     "svelte-preprocess": "^4.6.9",
     "tailwindcss": "^2.0.4",
-    "tailwindcss-filters": "^3.0.0",
     "tailwindcss-triangles": "^4.0.0"
   },
   "dependencies": {

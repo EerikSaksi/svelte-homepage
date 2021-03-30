@@ -1,9 +1,20 @@
 <script>
   import { onMount } from "svelte";
+  import IntersectionObserver from "svelte-intersection-observer";
+
   import Tailwind from "./Tailwind.svelte";
   import LeftHandIcons from "./icons/left_hand.svelte";
   import RightHandIcons from "./icons/right_hand.svelte";
-  import CarouselWithTechnologies from './carousel/carousel_with_technologies.svelte';
+  let CarouselWithTechnologies;
+  let intersecting;
+  let element
+  $: if (intersecting) {
+    console.log('ran')
+    import("./carousel/carousel_with_technologies.svelte").then((module) => {
+      CarouselWithTechnologies = module.default;
+    });
+  }
+
   let UniTimeline;
   let UrosTimeline;
 
@@ -46,10 +57,8 @@
   </div>
 </div>
 
-<div class="flex flex-col h-screen md:container md:mx-auto">
-  <div class="flex items-center justify-center flex-1 ">
-    <CarouselWithTechnologies/>
+<IntersectionObserver {element} threshold={0.25} bind:intersecting once = {true}>
+  <div bind:this={element} class="flex items-center justify-center h-screen">
+    <svelte:component this={CarouselWithTechnologies} />
   </div>
-  <div class="flex-1">
-  </div>
-</div>
+</IntersectionObserver>
