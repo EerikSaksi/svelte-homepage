@@ -31,7 +31,7 @@
   });
 </script>
 
-<div class="relative w-screen overflow-hidden h-72 rounded-xl">
+<div class="relative w-screen overflow-x-hidden h-1/2 rounded-xl">
   {#each technologies as technology, i}
     <Slide dist={distances[i]}>
       <TechnologyGrid images = {technology.images} extraClasses = {technology.extraClasses} />
