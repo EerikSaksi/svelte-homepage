@@ -32,24 +32,9 @@
 </script>
 
 <Tailwind />
-<div class="flex flex-col h-screen md:container md:mx-auto">
-  <div class="flex justify-center flex-1 ">
-    <LeftHandIcons />
-    <div class="flex flex-col justify-evenly">
-      <img alt="Cartoon Eerik" src="media/avataaars.svg" />
-    </div>
-    <RightHandIcons />
-  </div>
-  <div class="flex-1">
-    <svelte:component this={UniTimeline} />
-    <svelte:component this={UrosTimeline} />
-  </div>
-</div>
 
 <div class="flex flex-col h-screen md:container md:mx-auto">
   <div class="flex items-center justify-center flex-1 ">
     <CarouselWithTechnologies/>
-  </div>
-  <div class="flex-1">
   </div>
 </div>
