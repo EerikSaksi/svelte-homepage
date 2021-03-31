@@ -7,7 +7,7 @@
 
 
 <div
-  class="w-36 md:w-64 pic relative  {leftShift ? leftShift : 'left-1/2'} transform -translate-x-1/2 m-3">
+  class="w-36 md:w-64 pic relative  {leftShift ? leftShift : 'left-1/2'} transform -translate-x-1/2 mt-3 mb-3">
   <div
     class="flex flex-col items-center p-2 rounded-lg ring {colors[5]} ">
     <img

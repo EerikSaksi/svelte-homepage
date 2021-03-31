@@ -1,10 +1,11 @@
-<div class="flex flex-col justify-end text-sm text-end justify-evenly md:text-3xl">
-  <a
-    class="inline-flex items-center "
-    href="https://github.com/EerikSaksi">
+<div class="justify-self-start">
+  <a class="inline-flex items-center " href="https://github.com/EerikSaksi">
     <img alt="Github" class="w-6 mr-2 md:w-12" src="media/git.webp" />
     Github
   </a>
+</div>
+
+<div class="justify-self-start" >
   <a
     class="inline-flex items-center text-end"
     href="https://drive.google.com/uc?export=download&id=1ZkthduWcQRQuJ70Ma_PTB11x7ePEzwM7"

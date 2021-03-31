@@ -8,7 +8,7 @@
   let intersecting;
   let element;
   $: if (intersecting) {
-    arrowVisible = false
+    arrowVisible = false;
     console.log("ran");
     import("./carousel/carousel_with_technologies.svelte").then((module) => {
       CarouselWithTechnologies = module.default;
@@ -35,7 +35,7 @@
           });
           break;
         case 6:
-          arrowVisible = true
+          arrowVisible = true;
           clearInterval(interval);
       }
     }, 1000);
@@ -46,16 +46,16 @@
 </script>
 
 <Tailwind />
+
 <div class="flex flex-col h-screen md:container md:mx-auto">
   <main>
-    <div class="flex justify-center flex-1 ">
+    <div class="flex-1 text-sm grid-flow-col grid grid-rows-2 grid-cols-4 md:grid-cols-3 md:text-3xl place-items-center">
       <LeftHandIcons />
-      <div class="flex flex-col justify-evenly">
-        <img
-          class="h-64 md:h-96"
-          alt="Cartoon Eerik"
-          src="media/avataaars.svg" />
-      </div>
+      <img
+        class="h-64 md:h-96 row-span-2 col-span-2 md:col-span-1"
+        alt="Cartoon Eerik"
+        src="media/avataaars.svg" />
+
       <RightHandIcons />
     </div>
   </main>
@@ -63,7 +63,8 @@
     <svelte:component this={UniTimeline} />
     <svelte:component this={UrosTimeline} />
   </div>
-  <div class="{arrowVisible ? 'opacity-100' : 'opacity-0'} delay-500 transition-opacity absolute w-12 h-12 bottom-4 left-1/2 -translate-x-1/2">
+  <div
+    class="{arrowVisible ? 'opacity-100' : 'opacity-0'} delay-500 transition-opacity absolute w-12 h-12 bottom-4 left-1/2 -translate-x-1/2">
     <svg
       class="animate-bounce"
       xmlns="http://www.w3.org/2000/svg"

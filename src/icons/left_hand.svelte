@@ -1,8 +1,10 @@
-<div class="flex flex-col justify-start text-sm md:text-3xl justify-evenly">
-  <a class="inline-flex items-center text-start" href="mailto:saksi.eerik@gmail.com">
+<div class="justify-self-end">
+  <a
+    class="inline-flex items-center text-start"
+    href="mailto:saksi.eerik@gmail.com">
     Email
     <svg
-      class="h-6 ml-2 md:h-12"
+      class="h-6 md:h-12"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -14,6 +16,9 @@
         d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
     </svg>
   </a>
+</div>
+
+<div class="justify-self-end">
   <a class="inline-flex items-center text-start" href="tel:+44 7519 698 702">
     Mobile
     <svg
