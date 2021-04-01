@@ -4,7 +4,7 @@
     href="mailto:saksi.eerik@gmail.com">
     Email
     <svg
-      class="h-6 md:h-12 ml-1"
+      class="h-6 ml-1 md:h-12"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

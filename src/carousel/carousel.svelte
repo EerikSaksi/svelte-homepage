@@ -25,8 +25,21 @@
     tempDistances[convertIndex(activeIndex + 2)] = 2;
     distances = tempDistances;
   }
+
+  let ranges = [0, -1];
   onMount(() => {
-    nextSlide()
+    nextSlide();
+    const usingPhone = window.matchMedia("(max-width: 640px)");
+    function changeRanges(x) {
+      if (x.matches) {
+        ranges = [0, -1];
+      } else {
+        ranges = [1, -2 ];
+      }
+    }
+    changeRanges(usingPhone);
+    usingPhone.addListener(changeRanges);
+
     const interval = setInterval(() => nextSlide(), 3000);
     return () => clearInterval(interval);
   });
@@ -35,8 +48,10 @@
 <div class="relative w-screen overflow-x-hidden h-1/2 rounded-xl fade-in">
   {#each technologies as technology, i}
     <Slide dist={distances[i]}>
-      {#if distances[i] <= 1 && -2 <= distances[i]}
-        <TechnologyGrid images = {technology.images} extraClasses = {technology.extraClasses} />
+      {#if distances[i] <= ranges[0] && ranges[1] <= distances[i]}
+        <TechnologyGrid
+          images={technology.images}
+          extraClasses={technology.extraClasses} />
       {/if}
     </Slide>
   {/each}
