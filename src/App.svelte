@@ -17,7 +17,7 @@
 
   let UniTimeline;
   let UrosTimeline;
-  let arrowVisible;
+  let arrowVisible = false;
 
   let timer = 0;
   onMount(() => {
@@ -35,7 +35,7 @@
           });
           break;
         case 6:
-          arrowVisible = true;
+          arrowVisible = !intersecting
           clearInterval(interval);
       }
     }, 1000);
@@ -47,12 +47,12 @@
 
 <Tailwind />
 
-<div class="flex flex-col h-screen md:container md:mx-auto">
+<div class="flex flex-col h-screen md:mx-auto md:container">
   <main>
     <div class="flex-1 text-sm grid-flow-col grid grid-rows-2 grid-cols-4 md:grid-cols-3 md:text-3xl place-items-center">
       <LeftHandIcons />
       <img
-        class="h-64 md:h-96 row-span-2 col-span-2 md:col-span-1"
+        class="h-64  md:h-96 row-span-2 col-span-2 md:col-span-1 "
         alt="Cartoon Eerik"
         src="media/avataaars.svg" />
 
