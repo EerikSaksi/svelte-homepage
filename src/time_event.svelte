@@ -9,7 +9,7 @@
   class="max-w-md p-2 mx-auto mb-6 overflow-hidden bg-white shadow-md rounded-xl md:max-w-3xl">
   <p class="text-2xl text-center sm:text-3xl">{timeRange}</p>
   <div class="items-center justify-center md:flex">
-    <div class="place-content-center md:flex-shrink-0">
+    <div class="place-content-center ">
       <img class="object-cover w-full md:w-48" {src} {alt} />
     </div>
     <div class="items-center justify-center p-8">
