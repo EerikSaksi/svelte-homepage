@@ -4,6 +4,10 @@
   import Tailwind from "./Tailwind.svelte";
   import LeftHandIcons from "./icons/left_hand.svelte";
   import RightHandIcons from "./icons/right_hand.svelte";
+  import UniTimeline from './timeline/timeline.svelte'
+  import UrosTimeline from "./timeline/uros_timeline.svelte"
+  let uniTimelineVisible = false
+  let urosTimeLineVisible = false
   let CarouselWithTechnologies;
   let intersecting;
   let element;
@@ -15,8 +19,6 @@
     });
   }
 
-  let UniTimeline;
-  let UrosTimeline;
   let arrowVisible = false;
 
   let timer = 0;
@@ -25,17 +27,14 @@
       timer += 1;
       switch (timer) {
         case 1:
-          import("./timeline/timeline.svelte").then((module) => {
-            UniTimeline = module.default;
-          });
+          uniTimelineVisible = true
+          console.log(uniTimelineVisible)
           break;
         case 3:
-          import("./timeline/uros_timeline.svelte").then((module) => {
-            UrosTimeline = module.default;
-          });
+          urosTimeLineVisible = true
           break;
         case 6:
-          arrowVisible = !intersecting
+          arrowVisible = !intersecting;
           clearInterval(interval);
       }
     }, 1000);
@@ -49,10 +48,11 @@
 
 <div class="flex flex-col h-screen md:mx-auto md:container">
   <main>
-    <div class="flex-1 text-sm grid-flow-col grid grid-rows-2 grid-cols-4 md:grid-cols-3 md:text-3xl place-items-center">
+    <div
+      class="flex-1 text-sm grid-flow-col grid grid-rows-2 grid-cols-4 md:grid-cols-3 md:text-3xl place-items-center">
       <LeftHandIcons />
       <img
-        class="h-64  md:h-96 row-span-2 col-span-2 md:col-span-1 "
+        class="h-64 md:h-96 row-span-2 col-span-2 md:col-span-1 "
         alt="Cartoon Eerik"
         src="media/avataaars.svg" />
 
@@ -60,8 +60,13 @@
     </div>
   </main>
   <div class="flex-1">
-    <svelte:component this={UniTimeline} />
-    <svelte:component this={UrosTimeline} />
+    {#if uniTimelineVisible}
+      <UniTimeline visible = {uniTimelineVisible}/>
+    {/if}
+
+    {#if urosTimeLineVisible}
+      <UrosTimeline visible = {urosTimeLineVisible}/>
+    {/if}
   </div>
   <div
     class="{arrowVisible ? 'opacity-100' : 'opacity-0'} delay-500 transition-opacity absolute w-12 h-12 bottom-4 left-1/2 -translate-x-1/2">
