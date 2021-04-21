@@ -26,14 +26,14 @@
     const interval = setInterval(() => {
       timer += 1;
       switch (timer) {
-        case 1:
+        case 2:
           uniTimelineVisible = true
           console.log(uniTimelineVisible)
           break;
-        case 3:
+        case 4:
           urosTimeLineVisible = true
           break;
-        case 6:
+        case 7:
           arrowVisible = !intersecting;
           clearInterval(interval);
       }
