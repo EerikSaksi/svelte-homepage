@@ -3,11 +3,11 @@
   import IntersectionObserver from "svelte-intersection-observer";
   import Tailwind from "./Tailwind.svelte";
   import LeftHandIcons from "./icons/left_hand.svelte";
-  import RightHandIcons from "./icons/right_hand.svelte";
-  import UniTimeline from './timeline/timeline.svelte'
-  import UrosTimeline from "./timeline/uros_timeline.svelte"
-  let uniTimelineVisible = true
-  let urosTimeLineVisible = true
+  import UniTimeline from "./timeline/timeline.svelte";
+  import UrosTimeline from "./timeline/uros_timeline.svelte";
+  import VerticalTimeline from "./timeline/vertical_timeline.svelte";
+  let uniTimelineVisible = true;
+  let urosTimeLineVisible = true;
   let CarouselWithTechnologies;
   let intersecting;
   let element;
@@ -27,11 +27,11 @@
       timer += 1;
       switch (timer) {
         case 2:
-          uniTimelineVisible = true
-          console.log(uniTimelineVisible)
+          uniTimelineVisible = true;
+          console.log(uniTimelineVisible);
           break;
         case 4:
-          urosTimeLineVisible = true
+          urosTimeLineVisible = true;
           break;
         case 7:
           arrowVisible = !intersecting;
@@ -46,23 +46,14 @@
 
 <Tailwind />
 
-<div class="flex flex-col h-screen max-w-screen md:flex-row md:mx-auto">
+
+<LeftHandIcons />
+<div class="flex flex-col h-screen md:mx-auto md:container">
   <main>
-    <div
-      class="flex-1 text-sm grid-flow-col grid grid-rows-2 grid-cols-4 md:grid-cols-3 md:text-3xl place-items-center">
-      <LeftHandIcons />
-      <img
-        class="h-64 md:h-96 row-span-2 col-span-2 md:col-span-1"
-        alt="Cartoon Eerik"
-        src="media/avataaars.svg" />
-      <RightHandIcons />
+    <div class="flex-1 bg-red-500">
+      <VerticalTimeline />
     </div>
   </main>
-  <div class="flex-1 ">
-    {#if urosTimeLineVisible}
-      <UrosTimeline visible = {urosTimeLineVisible}/>
-    {/if}
-  </div>
   <div
     class="{arrowVisible ? 'opacity-100' : 'opacity-0'} delay-500 transition-opacity absolute w-12 h-12 bottom-4 left-1/2 -translate-x-1/2">
     <svg
