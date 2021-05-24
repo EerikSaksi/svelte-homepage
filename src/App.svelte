@@ -6,8 +6,8 @@
   import RightHandIcons from "./icons/right_hand.svelte";
   import UniTimeline from './timeline/timeline.svelte'
   import UrosTimeline from "./timeline/uros_timeline.svelte"
-  let uniTimelineVisible = false
-  let urosTimeLineVisible = false
+  let uniTimelineVisible = true
+  let urosTimeLineVisible = true
   let CarouselWithTechnologies;
   let intersecting;
   let element;
@@ -46,24 +46,19 @@
 
 <Tailwind />
 
-<div class="flex flex-col h-screen md:mx-auto md:container">
+<div class="flex flex-col h-screen max-w-screen md:flex-row md:mx-auto">
   <main>
     <div
       class="flex-1 text-sm grid-flow-col grid grid-rows-2 grid-cols-4 md:grid-cols-3 md:text-3xl place-items-center">
       <LeftHandIcons />
       <img
-        class="h-64 md:h-96 row-span-2 col-span-2 md:col-span-1 "
+        class="h-64 md:h-96 row-span-2 col-span-2 md:col-span-1"
         alt="Cartoon Eerik"
         src="media/avataaars.svg" />
-
       <RightHandIcons />
     </div>
   </main>
-  <div class="flex-1">
-    {#if uniTimelineVisible}
-      <UniTimeline visible = {uniTimelineVisible}/>
-    {/if}
-
+  <div class="flex-1 ">
     {#if urosTimeLineVisible}
       <UrosTimeline visible = {urosTimeLineVisible}/>
     {/if}

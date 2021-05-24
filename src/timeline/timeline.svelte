@@ -13,7 +13,7 @@
   export let src;
   export let explanationOnTop = true;
   export let explanationText = "MSci in Computing";
-  export let widths = "w-2/3 md:w-full";
+  export let widths = "h-2/3 md:h-full";
   export let dates = ["2018", "2022"];
   export let leftShift;
 </script>
@@ -27,10 +27,6 @@
       width: 100%;
     }
   }
-  .bar {
-    animation-delay: 1s;
-    animation: slideInFromLeft 1s forwards;
-  }
 </style>
 
 <div class="flex flex-col justify-start align-start fade-in ">
@@ -39,11 +35,9 @@
   {/if}
   <div class="relative flex justify-center m-3">
     <div
-      class="flex flex-row {widths} absolute {leftShift ? leftShift + ' transform -translate-x-1/2 ' : ''}">
-      <Ball {colors} date={dates[0]} />
+      class="flex flex-row {widths}  absolute {leftShift ? leftShift + ' transform -translate-x-1/2 ' : ''}">
       <div
-        class="h-3  rounded bar ease-in-out transition-all bg-gradient-to-r {colors[0]} {colors[1]} {colors[2]}" />
-      <Ball isRight={true} {colors} date={dates[1]} />
+        class="w-20 h-32 rounded bg-gradient-to-b {colors[0]} {colors[1]} {colors[2]}" />
     </div>
   </div>
   {#if !explanationOnTop}
