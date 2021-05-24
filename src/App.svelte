@@ -46,33 +46,25 @@
 
 <Tailwind />
 
-
-<LeftHandIcons />
-<div class="flex flex-col h-screen md:mx-auto md:container">
-  <main>
-    <div class="flex-1 bg-red-500">
-      <VerticalTimeline />
-    </div>
-  </main>
+<div class="bg-gradient-to-b from-blue-200 via-indigo-400 to-purple-400">
+  <LeftHandIcons />
   <div
-    class="{arrowVisible ? 'opacity-100' : 'opacity-0'} delay-500 transition-opacity absolute w-12 h-12 bottom-4 left-1/2 -translate-x-1/2">
-    <svg
-      class="animate-bounce"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor">
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M16 17l-4 4m0 0l-4-4m4 4V3" />
-    </svg>
+    class="z-10 flex flex-col items-center justify-center md:mx-auto md:container forefront-element ">
+    <main>
+      <div class="flex-1 ">
+        <VerticalTimeline />
+      </div>
+    </main>
+    <IntersectionObserver
+      {element}
+      threshold={0.05}
+      bind:intersecting
+      once={true}>
+      <div
+        bind:this={element}
+        class="flex items-center justify-center h-screen">
+        <svelte:component this={CarouselWithTechnologies} />
+      </div>
+    </IntersectionObserver>
   </div>
 </div>
-
-<IntersectionObserver {element} threshold={0.05} bind:intersecting once={true}>
-  <div bind:this={element} class="flex items-center justify-center h-screen">
-    <svelte:component this={CarouselWithTechnologies} />
-  </div>
-</IntersectionObserver>

@@ -1,4 +1,4 @@
-<div class="flex flex-row text-lg">
+<div class="flex flex-row justify-end text-lg">
   <a href="tel:+44 7519 698 702" class="inline-flex m-1">
     <svg
       class="h-8"
@@ -38,7 +38,7 @@
   <a
     href="https://drive.google.com/uc?export=download&id=1ZkthduWcQRQuJ70Ma_PTB11x7ePEzwM7"
     download
-    class="inline-flex m-1"
+    class="inline-flex m-1 mr-0"
   >
     <svg
       class="h-8"
