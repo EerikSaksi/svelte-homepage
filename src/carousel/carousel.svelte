@@ -45,7 +45,7 @@
   });
 </script>
 
-<div class="relative w-screen overflow-x-hidden h-1/2 rounded-xl fade-in">
+<div class="relative w-screen overflow-x-hidden h-1/2 fade-in">
   {#each technologies as technology, i}
     <Slide dist={distances[i]}>
       {#if distances[i] <= ranges[0] && ranges[1] <= distances[i]}
